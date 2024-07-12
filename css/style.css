@@ -1,22 +1,58 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #e7e7e7;
+  background-color: #1c1c1c;
   margin: 0px;
   padding: 0px;
 }
 
 .main-header {
-  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.main-header .logo a {
+  font-size: 24px;
+  font-weight: bold;
   color: #fff;
-  padding: 30px;
-  text-align: center;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0px;
+  padding: 15px 30px 15px 15px;
+
+  li {
+    margin: 0px 15px;
+  }
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #f39c12;
 }
 
 .info-section,
 .movie-section,
 .top-movies-section,
 .form-section {
-  margin: 20px 200px;
+  margin: 20px 300px;
   padding: 40px;
   background-color: #fff;
   border-radius: 8px;
@@ -26,6 +62,10 @@ body {
   h2 {
     color: #333;
   }
+}
+
+.info-section {
+  margin-top: 100px;
 }
 
 .cover-image {
@@ -55,7 +95,7 @@ body {
   padding: 5px;
 }
 
-.form-section {
+.form-section form {
   display: flex;
   flex-direction: column;
 

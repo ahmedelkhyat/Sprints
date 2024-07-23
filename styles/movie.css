@@ -1,10 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box;
-  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #1c1c1c;
+  color: #fff;
 }
 
 .main-header {
@@ -31,15 +34,37 @@ body {
   }
 }
 
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu-toggle:checked + .menu-icon + nav ul {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  padding: 20px;
+  top: 40px;
+  left: 0px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 nav ul {
   list-style: none;
   display: flex;
   margin: 0px;
   padding: 15px 30px 15px 15px;
+}
 
-  li {
-    margin: 0px 15px;
-  }
+nav ul li {
+  margin: 0px 15px;
 }
 
 nav ul li a {
@@ -56,7 +81,7 @@ nav ul li a:hover {
 .movie-details {
   position: relative;
   height: 95vh;
-  background: url("../assets/cover.jpg") no-repeat center center / cover;
+  background: url("../assets/cover.jpg") no-repeat center / cover;
   background-attachment: fixed;
   display: flex;
   align-items: center;
@@ -65,7 +90,7 @@ nav ul li a:hover {
   padding-left: 50px;
 }
 
-.overlay {
+.movie-banner .overlay {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -90,36 +115,43 @@ nav ul li a:hover {
 }
 
 .movie-text {
+  position: relative;
   z-index: 1;
   max-width: 600px;
+}
 
-  h1 {
-    font-size: 48px;
-    margin: 0px;
-  }
+.movie-text h1 {
+  font-size: 48px;
+  margin: 0px;
+}
 
-  h2 {
-    font-size: 36px;
-    color: #ffb22c;
-    margin: 10px 0px;
-  }
+.movie-text h2 {
+  font-size: 36px;
+  color: #ffb22c;
+  margin: 10px 0px;
+}
 
-  p {
-    font-size: 18px;
-    margin: 10px 0px;
-  }
+.movie-text p {
+  font-size: 18px;
+  margin: 10px 0px;
+}
+
+.ratings {
+  font-size: 24px;
+  margin: 10px 0px;
 }
 
 .buttons {
   margin: 10px 0px;
+}
 
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
+.buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 .watch-now {
@@ -128,7 +160,7 @@ nav ul li a:hover {
 }
 
 .watch-now:hover {
-  transform: scale(0.9);
+  transform: scale(1.1);
 }
 
 .watch-trailer {
@@ -159,28 +191,28 @@ nav ul li a:hover {
 .popular-movies {
   padding: 50px 0px;
   text-align: center;
+}
 
-  h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
+.popular-movies h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
 .popular-movies-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
 }
 
 .movie-item {
   width: 200px;
+  margin: 20px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .movie-item:hover {
-  transform: scale(0.9);
+  transform: scale(0.96);
 }
 
 .movie-item img {
@@ -190,19 +222,21 @@ nav ul li a:hover {
 }
 
 .movie-info {
-  margin-top: -30px;
   padding: 10px;
+  border-radius: 8px;
+  margin-top: -30px;
   z-index: 1;
+}
 
-  h3 {
-    font-size: 18px;
-    margin: 5px 0px;
-  }
+.movie-info h3 {
+  font-size: 18px;
+  margin: 5px 0px;
+}
 
-  p {
-    font-size: 14px;
-    margin: 5px 0px;
-  }
+.movie-info p {
+  font-size: 14px;
+  color: #fff;
+  margin: 5px 0px;
 }
 
 footer {
@@ -210,4 +244,85 @@ footer {
   padding: 20px;
   background-color: #333;
   color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .movie-details,
+  .movie-banner-info,
+  .movie-text,
+  .popular-movies-container,
+  .movie-item {
+    padding: 0px;
+    margin: 0px auto;
+  }
+
+  .movie-details {
+    display: block;
+    height: 50vh;
+    padding: 0px;
+  }
+
+  .movie-banner-info {
+    padding-top: 120px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .movie-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .popular-movies-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+  }
+
+  .movie-item {
+    margin-bottom: 100px;
+    width: 600px;
+  }
+
+  .movie-info {
+    margin-top: -50px;
+  }
+
+  .movie-info h3 {
+    font-size: 32px;
+  }
+
+  .movie-info p {
+    font-size: 24px;
+    color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    position: absolute;
+    right: 30px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    padding: 0px;
+  }
+
+  nav ul li {
+    margin: 5px 0px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header .logo {
+    font-size: 20px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
 }

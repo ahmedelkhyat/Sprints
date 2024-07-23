@@ -2,12 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Movie Database</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oppenheimer</title>
     <link rel="stylesheet" href="../styles/movie.css" />
   </head>
   <body>
     <header class="main-header">
       <div class="logo"><a href="../index.html">Movie Database</a></div>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
       <nav>
         <ul>
           <li><a href="../index.html">Home</a></li>
@@ -21,24 +24,25 @@
         <div class="overlay"></div>
         <div class="movie-banner-info">
           <div class="movie-poster">
-            <img src="../assets/oppenheimer.webp" alt="Oppenheimer Poste" />
+            <img src="../assets/oppenheimer.webp" alt="Oppenheimer Poster" />
           </div>
           <div class="movie-text">
             <h1>Oppenheimer</h1>
             <h2>Movie</h2>
             <p>Biography / Drama / History</p>
+            <div class="ratings">
+              <span>★★★★☆</span>
+            </div>
             <div class="buttons">
               <button class="watch-now">Watch Now</button>
               <button class="watch-trailer">Watch Trailer</button>
             </div>
             <p class="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
-              illo! Facere sed consequuntur ab eius voluptatem reprehenderit,
-              dolor beatae magnam laboriosam quam dolore nulla, harum quidem
-              voluptatum fugiat nemo tenetur?
+              The story of American scientist J. Robert Oppenheimer and his role
+              in the development of the atomic bomb.
             </p>
             <p class="description">
-              Director: <a href="director.html">Christopher Nolan</a>
+              by <a href="director.html?id=1">Christopher Nolan</a>
             </p>
           </div>
         </div>
@@ -58,14 +62,14 @@
           <img src="../assets/dark-knight.jpg" alt="The Dark Knight Poster" />
           <div class="movie-info">
             <h3>The Dark Knight</h3>
-            <p>Action / Crime</p>
+            <p>Action / Crime / Drama</p>
           </div>
         </div>
         <div class="movie-item">
           <img src="../assets/interstellar.jpg" alt="Interstellar Poster" />
           <div class="movie-info">
             <h3>Interstellar</h3>
-            <p>Adventure / Drama</p>
+            <p>Adventure / Drama / Sci-Fi</p>
           </div>
         </div>
         <div class="movie-item">
